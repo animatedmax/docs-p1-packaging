@@ -79,7 +79,7 @@ In this step, we prepare a BOSH manifest for the example product release. The BO
 
 1. Target your BOSH:
   <pre class='terminal'>
-    $  bosh target 52.8.50.119
+    $ bosh target 52.8.50.119
     Target set to `my-bosh'
     Your username: admin
     Enter password: admin
@@ -87,7 +87,7 @@ In this step, we prepare a BOSH manifest for the example product release. The BO
 
 1. Upload your release by running:
   <pre class='terminal'>
-    bosh upload release example-release-7+dev.2.tgz
+    $ bosh upload release example-release-7+dev.2.tgz
     Acting as user 'admin' on 'my-bosh'
     Verifying release...
     Task 29 done
@@ -99,7 +99,7 @@ In this step, we prepare a BOSH manifest for the example product release. The BO
 
 1. Upload the latest AWS Xen-HVM Light stemcell to your BOSH by running:
   <pre class='terminal'>
-    bosh upload stemcell https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3026
+    $ bosh upload stemcell https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3026
     Acting as user 'admin' on 'my-bosh'
     Using remote stemcell `https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-trusty-go_agent?v=3026'
     Director task 15
@@ -135,12 +135,12 @@ In this step, we prepare a BOSH manifest for the example product release. The BO
 
 1. Run the following command to set the deployment.
   <pre class='terminal'>
-    bosh deployment ./example-release.yml
+    $ bosh deployment ./example-release.yml
   </pre>
 
 1. Deploy the example release:
   <pre class='terminal'>
-   bosh deploy
+   $ bosh deploy
    Acting as user 'admin'
    Are you sure you want to deploy? (type 'yes' to continue): yes
    Task 31 done

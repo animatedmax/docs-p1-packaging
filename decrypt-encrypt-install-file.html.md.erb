@@ -10,17 +10,15 @@ This topic describes the installation and product template YAML files in your Pi
 
 During the installation process, Ops Manager combines information from the installation and product template YAML files to generate the manifests that define your deployment.
 
-**Installation files**: PCF stores user-entered data and automatically generated values for Ops Manager in installation files. PCF encrypts and stores these files in the following IaaS-specific directory:
+**Installation files**: PCF stores user-entered data and automatically generated values for Ops Manager in installation files. PCF encrypts and stores these files in the following directory:
 
-  * **AWS**:`/var/ubuntu/workspaces/default`
-  * **VMWare IaaS Product**:`/var/tempest/workspaces/default`
+  * `/var/tempest/workspaces/default`
 
 You must decrypt them to view the contents, edit the files as necessary for your content migration, then re-encrypt them.
 
-**Product templates**: Ops Manager uses product templates to create forms and obtain user input. The `job_types` and `property_blueprint` key-value pairs in a product template determine how the `jobs` and `properties` sections display in the installation file. Ops Manager stores product templates in the following IaaS-specific directory:
+**Product templates**: Ops Manager uses product templates to create forms and obtain user input. The `job_types` and `property_blueprint` key-value pairs in a product template determine how the `jobs` and `properties` sections display in the installation file. Ops Manager stores product templates in the following directory:
 
-  * **AWS**:`/var/ubuntu/meta-data`
-  * **VMWare IaaS Product**:`/var/tempest/workspaces/default/metadata`
+  * `/var/tempest/workspaces/default/metadata`
 
 You can edit these files. User input does not alter these files.
 
@@ -42,8 +40,7 @@ You can edit these files. User input does not alter these files.
     Replace `LOCAL_USER@LOCAL_SERVER` with the username and the IP address of your machine.
 
     Use the correct `REMOTE_USER` name for your IaaS, as follows:
-    * **AWS**: `ubuntu`
-    * **VMWare IaaS Product**: `tempest`
+    * **All Platforms**: `ubuntu`
 
     <pre class="terminal">
     $ ssh LOCAL_USER@LOCAL_SERVER
@@ -65,8 +62,8 @@ You can edit these files. User input does not alter these files.
     * vSphere: Refer to the step on defining password information for the VM admin user in the [Deploying Operations Manager to vSphere](../customizing/deploying-vm.html) topic.
 
     <pre class="terminal">
-    $ ssh tempest@REMOTE_SERVER
-    tempest@REMOTE_SERVER's password:
+    $ ssh ubuntu@REMOTE_SERVER
+    ubuntu@REMOTE_SERVER's password:
     </pre>
 
 1. Use `sudo cp` to copy the files to the protected `/var/REMOTE_USER/workspaces/default` directory.
